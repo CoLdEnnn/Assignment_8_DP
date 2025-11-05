@@ -3,13 +3,14 @@ package hero;
 import visitor.BanVisitor;
 import visitor.HeroVisitor;
 
-public class Support implements Hero{
+public class HardSupport implements Hero{
     @Override
     public void pickHero(HeroVisitor visitor) {
-        visitor.visitSupport(this);
+        visitor.visitHardSupport(this);
     }
+
     @Override
     public void banHero(BanVisitor visitor) {
-        visitor.banSupport(this);
+        visitor.banHardSupport(this);
     }
 }

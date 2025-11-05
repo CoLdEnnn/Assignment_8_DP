@@ -1,11 +1,11 @@
 package visitor;
 
-import hero.Carry;
-import hero.Mid;
-import hero.Support;
+import hero.*;
 
 public interface HeroVisitor {
     void visitSupport(Support sup);
     void visitMid(Mid mid);
     void visitCarry(Carry carry);
+    void visitOfflane(Offlane offlane);
+    void visitHardSupport(HardSupport hardsup);
 }

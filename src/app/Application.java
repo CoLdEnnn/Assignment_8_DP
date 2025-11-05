@@ -1,9 +1,8 @@
 package app;
 
-import hero.Carry;
-import hero.Hero;
-import hero.Mid;
-import hero.Support;
+import hero.*;
+import visitor.Ban;
+import visitor.BanVisitor;
 import visitor.HeroVisitor;
 import visitor.Pick;
 
@@ -12,11 +11,22 @@ public class Application {
         Hero sup = new Support();
         Hero carry = new Carry();
         Hero mid = new Mid();
+        Hero offlane = new Offlane();
+        Hero hardSupport = new HardSupport();
 
         HeroVisitor pick = new Pick();
 
-        sup.pickHero(pick);
         carry.pickHero(pick);
         mid.pickHero(pick);
+        offlane.pickHero(pick);
+        sup.pickHero(pick);
+        hardSupport.pickHero(pick);
+
+        BanVisitor ban = new Ban();
+        carry.banHero(ban);
+        mid.banHero(ban);
+        offlane.banHero(ban);
+        sup.banHero(ban);
+        hardSupport.banHero(ban);
     }
 }

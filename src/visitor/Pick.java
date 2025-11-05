@@ -1,8 +1,6 @@
 package visitor;
 
-import hero.Carry;
-import hero.Mid;
-import hero.Support;
+import hero.*;
 
 public class Pick implements HeroVisitor{
     @Override
@@ -20,5 +18,17 @@ public class Pick implements HeroVisitor{
     public void visitCarry(Carry carry){
         System.out.println("\nPicking carry...");
         System.out.println("Ogre Magi");
+    }
+
+    @Override
+    public void visitOfflane(Offlane offlane) {
+        System.out.println("\nPicking offlane...");
+        System.out.println("Legion Commander");
+    }
+
+    @Override
+    public void visitHardSupport(HardSupport hardsup) {
+        System.out.println("\nPicking hard support...");
+        System.out.println("Lion");
     }
 }
